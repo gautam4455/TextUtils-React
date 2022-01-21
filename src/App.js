@@ -36,7 +36,7 @@ function App() {
 		<>
 			{/* For Github - removed routing (git not support it) */}
 			<div className="App">
-				<Navbar mode={mode} toggleMode={toggleMode} />
+				<Navbar mode={mode} title="TextUtils" toggleMode={toggleMode} />
 				<div style={{ height: '100px' }}>
 					<Alert alert={alert} />
 				</div>

@@ -35,14 +35,10 @@ export default function TextForm(props) {
         }
     }
     const removeSpaces = () => {
-        if( text === text.replace(/\s+/g, ' ') ) {
-            props.showAlert('success', 'No Spaces to removed.');
-        }
-        else {
-            let newText = text.replace(/\s+/g, ' ');
-            setText(newText);
-            props.showAlert('success', 'Removed extra spaces.');
-        }
+        let newText = text.replace(/\s+/g, ' ');
+        let finalText = newText.replace(/\s+\./g, '.');
+        setText(finalText);
+        props.showAlert('success', 'Removed extra spaces.');
     }
     const copyText = () => {
         navigator.clipboard.writeText(text);
