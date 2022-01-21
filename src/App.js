@@ -1,11 +1,11 @@
 import { useState } from 'react';
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+// import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 import './App.css';
 import Navbar from './components/Navbar';
-import TextForm from './components/TextForm';
-import About from './components/About';
 import Alert from './components/Alert';
+import TextForm from './components/TextForm';
+// import About from './components/About';
 
 function App() {
 	const [mode, setMode] = useState('light');
@@ -34,19 +34,20 @@ function App() {
 
 	return (
 		<>
-			{/* For Github - remove routing (it not support) */}
-			{/* <div className="App">
+			{/* For Github - removed routing (git not support it) */}
+			<div className="App">
 				<Navbar mode={mode} toggleMode={toggleMode} />
-				<Alert alert="This is alert."/>
-				<div className="container">
-					<TextForm mode={mode} heading="Try TextUtils - Word Counter, Character Counter, Remove Extra Spaces" showAlert={showAlert}/>
-					<About mode={mode} toggleMode={toggleMode} />
+				<div style={{ height: '100px' }}>
+					<Alert alert={alert} />
 				</div>
-			</div> */}
+				<div className="container">
+					<TextForm mode={mode} heading="Try TextUtils - Word Counter, Character Counter, Remove Extra Spaces" showAlert={showAlert} />
+				</div>
+			</div>
 
 
 			{/* For Servers */}
-			<div className="App">
+			{/* <div className="App">
 				<Router>
 					<Navbar mode={mode} toggleMode={toggleMode} />
 					<div style={{ height: '100px' }}>
@@ -54,22 +55,21 @@ function App() {
 					</div>
 					<div className="container">
 						<Routes>
-							{/* 
-							with "exact" keyword
-							/users ----> Users component
-							
-							without "exact" keyword
-							/users/john ----> John component 
-							*/}
-
 							<Route index exact path="/" element={<TextForm mode={mode} heading="Try TextUtils - Word Counter, Character Counter, Remove Extra Spaces" showAlert={showAlert} />} />
 							<Route exact path="/about" element={<About mode={mode} toggleMode={toggleMode} />} />
 						</Routes>
 					</div>
 				</Router>
-			</div>
+			</div> */}
 		</>
 	);
 }
+/* For <Route> path
+with "exact" keyword
+/users ----> Users component
+
+without "exact" keyword
+/users/john ----> John component 
+*/
 
 export default App;
