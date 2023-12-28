@@ -2,12 +2,12 @@ import React from 'react'
 // import { Link } from "react-router-dom";
 
 
-export default function Navbar(props) {
+export default function Navbar({ mode, title, toggleMode }) {
 
     return (
-        <nav className={`navbar navbar-expand-lg navbar-${props.mode} bg-${props.mode}`}>
+        <nav className={`navbar navbar-expand-lg navbar-${mode} bg-${mode}`}>
             <div className="container-fluid">
-                <button className="navbar-brand bg-transparent border-0">{props.title}</button>
+                <button className="navbar-brand bg-transparent border-0">{title}</button>
                 {/* <Link className="navbar-brand" to="/">Navbar</Link> */}
                 <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span className="navbar-toggler-icon"></span>
@@ -24,8 +24,8 @@ export default function Navbar(props) {
                         </li>
                     </ul>
                     <div className="form-check form-switch" role='button'>
-                        <input className="form-check-input" type="checkbox" role="switch" id="mode" onChange={props.toggleMode} style={{ cursor: 'pointer' }} />
-                        <label className={`form-check-label text-${props.mode === 'dark' ? 'light' : 'dark'}`} htmlFor="mode" style={{ cursor: 'pointer' }}>Enable {props.mode === 'light' ? 'Dark' : 'Light'} Mode</label>
+                        <input className="form-check-input" type="checkbox" role="switch" checked={mode === 'dark'} id="mode" onChange={toggleMode} style={{ cursor: 'pointer' }} />
+                        <label className={`form-check-label text-${mode === 'dark' ? 'light' : 'dark'}`} htmlFor="mode" style={{ cursor: 'pointer' }}>Enable {mode === 'light' ? 'Dark' : 'Light'} Mode</label>
                     </div>
                 </div>
             </div>

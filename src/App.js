@@ -1,14 +1,13 @@
 import { useState } from 'react';
 // import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
-import './App.css';
 import Navbar from './components/Navbar';
 import Alert from './components/Alert';
 import TextForm from './components/TextForm';
 // import About from './components/About';
 
 function App() {
-	const [mode, setMode] = useState('light');
+	const [mode, setMode] = useState('dark');
 	const [alert, setAlert] = useState(null);
 
 	const showAlert = (type, message) => {
@@ -26,7 +25,7 @@ function App() {
 			setMode('light');
 			showAlert('success', 'Light Mode has Enabled.');
 		}
-		else {
+		if (mode === 'light') {
 			setMode('dark');
 			showAlert('success', 'Dark Mode has Enabled.');
 		}
