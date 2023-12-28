@@ -24,11 +24,11 @@ function App() {
 	const toggleMode = () => {
 		if (mode === 'dark') {
 			setMode('light');
-			showAlert('success', 'Dark Mode has Enabled.');
+			showAlert('success', 'Light Mode has Enabled.');
 		}
 		else {
 			setMode('dark');
-			showAlert('success', 'Light Mode has Enabled.');
+			showAlert('success', 'Dark Mode has Enabled.');
 		}
 	}
 
